@@ -14,4 +14,12 @@ Public Class Form1
 
         DBConnection.CloseConnection()
     End Sub
+
+    Private Sub btn_hapus_Click(sender As Object, e As EventArgs) Handles btn_hapus.Click
+        DBConnection.OpenConnection()
+        Dim command = New MySqlCommand("DELETE from users where username = 'addin'", DBConnection.CONN)
+        command.ExecuteNonQuery()
+
+        DBConnection.CloseConnection()
+    End Sub
 End Class

@@ -29,6 +29,7 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tb_password = New System.Windows.Forms.TextBox()
         Me.btn_simpan = New System.Windows.Forms.Button()
+        Me.btn_hapus = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'tb_fullname
@@ -88,11 +89,21 @@ Partial Class Form1
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = True
         '
+        'btn_hapus
+        '
+        Me.btn_hapus.Location = New System.Drawing.Point(213, 98)
+        Me.btn_hapus.Name = "btn_hapus"
+        Me.btn_hapus.Size = New System.Drawing.Size(75, 23)
+        Me.btn_hapus.TabIndex = 7
+        Me.btn_hapus.Text = "Hapus"
+        Me.btn_hapus.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(306, 140)
+        Me.ClientSize = New System.Drawing.Size(300, 148)
+        Me.Controls.Add(Me.btn_hapus)
         Me.Controls.Add(Me.btn_simpan)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.tb_password)
@@ -114,4 +125,5 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents tb_password As TextBox
     Friend WithEvents btn_simpan As Button
+    Friend WithEvents btn_hapus As Button
 End Class
