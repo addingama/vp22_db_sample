@@ -30,6 +30,8 @@ Partial Class Form1
         Me.tb_password = New System.Windows.Forms.TextBox()
         Me.btn_simpan = New System.Windows.Forms.Button()
         Me.btn_hapus = New System.Windows.Forms.Button()
+        Me.dgv_data = New System.Windows.Forms.DataGridView()
+        CType(Me.dgv_data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tb_fullname
@@ -82,7 +84,7 @@ Partial Class Form1
         '
         'btn_simpan
         '
-        Me.btn_simpan.Location = New System.Drawing.Point(116, 98)
+        Me.btn_simpan.Location = New System.Drawing.Point(110, 87)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(75, 23)
         Me.btn_simpan.TabIndex = 6
@@ -91,18 +93,27 @@ Partial Class Form1
         '
         'btn_hapus
         '
-        Me.btn_hapus.Location = New System.Drawing.Point(213, 98)
+        Me.btn_hapus.Location = New System.Drawing.Point(301, 13)
         Me.btn_hapus.Name = "btn_hapus"
         Me.btn_hapus.Size = New System.Drawing.Size(75, 23)
         Me.btn_hapus.TabIndex = 7
         Me.btn_hapus.Text = "Hapus"
         Me.btn_hapus.UseVisualStyleBackColor = True
         '
+        'dgv_data
+        '
+        Me.dgv_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_data.Location = New System.Drawing.Point(12, 127)
+        Me.dgv_data.Name = "dgv_data"
+        Me.dgv_data.Size = New System.Drawing.Size(260, 161)
+        Me.dgv_data.TabIndex = 8
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(300, 148)
+        Me.ClientSize = New System.Drawing.Size(503, 311)
+        Me.Controls.Add(Me.dgv_data)
         Me.Controls.Add(Me.btn_hapus)
         Me.Controls.Add(Me.btn_simpan)
         Me.Controls.Add(Me.Label3)
@@ -113,6 +124,7 @@ Partial Class Form1
         Me.Controls.Add(Me.tb_fullname)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.dgv_data, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -126,4 +138,5 @@ Partial Class Form1
     Friend WithEvents tb_password As TextBox
     Friend WithEvents btn_simpan As Button
     Friend WithEvents btn_hapus As Button
+    Friend WithEvents dgv_data As DataGridView
 End Class
