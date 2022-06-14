@@ -35,6 +35,13 @@ Public Class Form1
         DBConnection.CloseConnection()
 
         ReloadData()
+        ClearForm()
+    End Sub
+
+    Private Sub ClearForm()
+        tb_fullname.Text = ""
+        tb_password.Text = ""
+        tb_username.Text = ""
     End Sub
 
     Private Sub btn_hapus_Click(sender As Object, e As EventArgs) Handles btn_hapus.Click
@@ -45,5 +52,24 @@ Public Class Form1
         DBConnection.CloseConnection()
 
         ReloadData()
+    End Sub
+
+    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+        DBConnection.OpenConnection()
+        Dim command = New MySqlCommand("UPDATE users set name='" & tb_fullname.Text & "', password='" & tb_password.Text & "' where username = '" & tb_username.Text & "'", DBConnection.CONN)
+        command.ExecuteNonQuery()
+
+        DBConnection.CloseConnection()
+
+        ReloadData()
+        ClearForm()
+    End Sub
+
+
+
+    Private Sub dgv_data_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_data.CellClick
+        tb_username.Text = dgv_data.SelectedRows(0).Cells(0).Value.ToString()
+        tb_password.Text = dgv_data.SelectedRows(0).Cells(1).Value.ToString()
+        tb_fullname.Text = dgv_data.SelectedRows(0).Cells(2).Value.ToString()
     End Sub
 End Class
